@@ -1,0 +1,429 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --bg_color: #d9edf7;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--bg_color);
+}
+
+.main {
+    text-align: center;
+    padding-top: 15%;
+    margin: 10px;
+    box-shadow: #00000010 0px 0px 10px;
+    border-radius: 10px;
+    box-sizing: content-box;
+    /* height: calc(85% - 10px); */
+    width: calc(100% - 20px);
+    position: absolute;
+    background-color: #ffffff;
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+#text {
+    width: 80%;
+    min-height: 80px;
+    border-radius: 10px;
+    /* border: solid #ccc 1px; */
+    padding: 10px;
+    position: relative;
+    border: none;
+    background-color: var(--bg_color);
+}
+
+#zhuanhuan {
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #007aff;
+    background-color: #007aff;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    /* border-top-right-radius:0px;
+    border-bottom-right-radius:0px; */
+}
+
+#clear {
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #dd524d;
+    background-color: #dd524d;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    /* border-top-left-radius:0px;
+    border-bottom-left-radius:0px; */
+}
+
+#download {
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: solid #fff 1px;
+    background-color: darkcyan;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#help {
+    width: 80%;
+    text-align: left;
+    margin: 60px auto;
+    font-size: 12px;
+}
+
+#help img {
+    width: 80%;
+    border-radius: 5px;
+    border: solid #f2f2f2 1px;
+}
+
+#result {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#copyright {
+    position: relative;
+    bottom: 0px;
+    font-size: 10px;
+    color: #eee;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    margin: 50px 0px 10px 0px;
+}
+
+#copyright svg {
+    height: 18px;
+    vertical-align: sub;
+    width: 18px;
+}
+
+.nav {
+    position: absolute;
+    top: -15pt;
+}
+
+#nav .title {
+    background: #FFF;
+    padding: 10pt;
+    float: left;
+    padding-top: 5pt;
+    margin: 0;
+    margin-top: 5pt;
+    border-radius: 10pt;
+    color: var(--bg_color);
+    font-size: 10pt;
+}
+
+#nav .index {
+    font-size: 16pt;
+    color: #000;
+    margin: 0;
+}
+
+#ds {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+#ds p {
+    font-size: 9pt;
+    color: #ccc;
+}
+
+#ds img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+#history {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#history .slide span {
+    font-size: 12px;
+    line-height: 12px;
+    text-align: right;
+}
+
+#history .slide span.upright::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-bottom: 1px solid #656565;
+    border-left: 1px solid #656565;
+    transform: rotate(-50deg);
+    position: relative;
+    bottom: 3px;
+}
+
+#history .slide span.reverse::after {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid #656565;
+    border-right: 1px solid #656565;
+    transform: rotate(-45deg);
+    position: relative;
+    top: 3px;
+}
+
+#history .slide {
+    text-align: right;
+    color: #999999;
+}
+
+#history ul {
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#history ul li {
+    /* display: inline-block; */
+    /* white-space: nowrap;  */
+    max-height: 79px;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    /* list-style: decimal;
+    list-style-position: inside; */
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#history li:active {
+    background: var(--bg_color);
+}
+
+#history pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+#history .time {
+    font-size: 14px;
+}
+
+#history .clearHistory {
+    font-size: 12px;
+    color: #999;
+    /* float: right; */
+    margin-top: 5pt;
+    margin-left: 80%;
+    cursor: pointer;
+}
+
+@keyframes wxdaani {
+    0% {}
+    25% {
+        transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        /* IE 9 */
+        -moz-transform: rotate(10deg);
+        /* Firefox */
+        -webkit-transform: rotate(10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(10deg);
+        /* Opera */
+    }
+    75% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        /* IE 9 */
+        -moz-transform: rotate(-10deg);
+        /* Firefox */
+        -webkit-transform: rotate(-10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(-10deg);
+        /* Opera */
+    }
+    100% {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -moz-transform: rotate(0deg);
+        /* Firefox */
+        -webkit-transform: rotate(0deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(0deg);
+        /* Opera */
+    }
+}
+
+@-moz-keyframes wxdaani {
+    0% {}
+    25% {
+        transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        /* IE 9 */
+        -moz-transform: rotate(10deg);
+        /* Firefox */
+        -webkit-transform: rotate(10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(10deg);
+        /* Opera */
+    }
+    75% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        /* IE 9 */
+        -moz-transform: rotate(-10deg);
+        /* Firefox */
+        -webkit-transform: rotate(-10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(-10deg);
+        /* Opera */
+    }
+    100% {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -moz-transform: rotate(0deg);
+        /* Firefox */
+        -webkit-transform: rotate(0deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(0deg);
+        /* Opera */
+    }
+}
+
+@-webkit-keyframes wxdaani {
+    0% {}
+    25% {
+        transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        /* IE 9 */
+        -moz-transform: rotate(10deg);
+        /* Firefox */
+        -webkit-transform: rotate(10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(10deg);
+        /* Opera */
+    }
+    75% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        /* IE 9 */
+        -moz-transform: rotate(-10deg);
+        /* Firefox */
+        -webkit-transform: rotate(-10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(-10deg);
+        /* Opera */
+    }
+    100% {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -moz-transform: rotate(0deg);
+        /* Firefox */
+        -webkit-transform: rotate(0deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(0deg);
+        /* Opera */
+    }
+}
+
+@-o-keyframes wxdaani {
+    0% {}
+    25% {
+        transform: rotate(10deg);
+        -ms-transform: rotate(10deg);
+        /* IE 9 */
+        -moz-transform: rotate(10deg);
+        /* Firefox */
+        -webkit-transform: rotate(10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(10deg);
+        /* Opera */
+    }
+    75% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        /* IE 9 */
+        -moz-transform: rotate(-10deg);
+        /* Firefox */
+        -webkit-transform: rotate(-10deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(-10deg);
+        /* Opera */
+    }
+    100% {
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        /* IE 9 */
+        -moz-transform: rotate(0deg);
+        /* Firefox */
+        -webkit-transform: rotate(0deg);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(0deg);
+        /* Opera */
+    }
+}
+
+#fonts {
+    text-align: left;
+    width: 85%;
+    margin: 10pt auto;
+    font-size: 10pt;
+}
+
+#fonts ul {
+    list-style: none;
+    max-height: 140pt;
+    overflow: scroll;
+    overflow-x: hidden;
+    background: #f2f2f2;
+    border-radius: 10pt;
+    border-top-left-radius: 0pt;
+    padding: 5pt;
+    padding-bottom: 20pt;
+}
+
+#fonts ul li {
+    font-size: 9pt;
+    padding: 5pt;
+    border-radius: 5pt;
+}
+
+#fonts .selected {
+    background: #fff;
+    font-size: 12pt;
+    color: #007aff;
+}
+
+#fonts .title {
+    color: #666;
+    background: #f2f2f2;
+    border-top-left-radius: 10pt;
+    border-top-right-radius: 10pt;
+    padding: 5pt;
+}

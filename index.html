@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="keywords" content="朋友圈折叠,朋友圈不折叠,不折叠输入法,朋友圈不折叠,怎样让微信文字不折叠,不折叠输入法app,朋友圈避免只显示一行,微信朋友圈文字怎么不折叠,微商输入法" />
+    <meta name="description" content="最新可以使用的朋友圈文字不折叠转换工具,朋友圈发长文不折叠,微信发文字怎么不折叠,微信怎么发显示全文的,微商专用" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>微信朋友圈不折叠转换</title>
+    <link rel="stylesheet" href="https://unpkg.com/sweetalert2@10.13.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div id="nav" class="nav">
+            <div class="title pointer index" id='pyqbzd'>朋友圈不折叠</div>
+            <div class="title pointer" id='hyzt'>花样字</div>
+        </div>
+
+        <textarea id="text" rows="7" cols="" style="overflow:hidden; resize:none;" autofocus></textarea>
+        <div id='history'>
+            <div class="slide pointer"><span class="upright">最近记录 </span></div>
+            <ul>
+                <div class="clearHistory pointer">清空记录</div>
+            </ul>
+        </div>
+
+        <button id="zhuanhuan" class="zhuanhuan" data-clipboard-target="#zhuanhuan"
+            data-clipboard-action="copy">转换并复制</button>
+        <button id="clear">清空</button>
+        <br />
+        <div id="explain">
+            <div id="historyRecord"></div>
+            <div id="help">
+                <p><span style="color: dodgerblue">👀使用必看</span></p>
+                </br>
+                <p>1、将文案粘贴到上面的文本框中，点击转换并复制，回到微信朋友圈长按粘贴，发表成功之后下拉刷新朋友圈，如果显示异常，可以尝试重新转换</p>
+                <p><strong>2、转换一次只可粘贴发表一次，多次粘贴发表需要进行多次转换</strong></p>
+                <p>
+                    3、含有较多的表情符号、空格回车等非中文字时可能无效，建议重新修改文案或者使用
+                    <span style=" color: dodgerblue" class="hyzt pointer">【花样字】</span>功能尝试一下
+                </p>
+            </div>
+        </div>
+        <br />
+        <div id="fonts" style="display: none;">
+            <span class="title">选择样式</span>
+            <ul>
+                <li fontid="f1" class="selected" fonttype='1'>
+                    𝑨𝑩𝑪𝑫𝑬𝑭𝑮𝑯𝑰𝑱𝑲𝑳𝑴𝑵𝑶𝑷𝑸𝑹𝑺𝑻𝑼𝑽𝑾𝑿𝒀𝒁<br>𝒂𝒃𝒄𝒅𝒆𝒇𝒈𝒉𝒊𝒋𝒌𝒍𝒎𝒏𝒐𝒑𝒒𝒓𝒔𝒕𝒖𝒗𝒘𝒙𝒚𝒛
+                </li>
+                <li fontid="f2" fonttype='all'>
+                    1꯭2꯭3꯭4꯭5꯭6꯭7꯭8꯭9꯭0꯭
+                    <br>
+                    A꯭B꯭C꯭D꯭E꯭F꯭G꯭H꯭I꯭J꯭K꯭L꯭M꯭N꯭O꯭P꯭Q꯭R꯭S꯭T꯭U꯭V꯭W꯭X꯭Y꯭Z꯭
+                    <br>
+                    a꯭b꯭c꯭d꯭e꯭f꯭g꯭h꯭i꯭j꯭k꯭l꯭m꯭n꯭o꯭p꯭q꯭r꯭s꯭t꯭u꯭v꯭w꯭x꯭y꯭z꯭
+                </li>
+                <li fontid="f3" fonttype='2'>
+                    𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡𝟘<br>𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ<br>𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫
+                </li>
+                <li fontid="f4" fonttype='2'>
+                    𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬<br>𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭<br>𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇
+                </li>
+                <li fontid="f5" fonttype='2'>
+                    𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬<br>𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕<br>𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯
+                </li>
+                <li fontid="f6" fonttype='1'>
+                    𝐀𝐁𝐂𝐃𝐄𝐅𝐆𝐇𝐈𝐉𝐊𝐋𝐌𝐍𝐎𝐏𝐐𝐑𝐒𝐓𝐔𝐕𝐖𝐗𝐘𝐙<br>𝐚𝐛𝐜𝐝𝐞𝐟𝐠𝐡𝐢𝐣𝐤𝐥𝐦𝐧𝐨𝐩𝐪𝐫𝐬𝐭𝐮𝐯𝐰𝐱𝐲𝐳
+                </li>
+                <li fontid="f7" fonttype='1'>
+                    𝒜𝓑𝒞𝒟𝓔𝓕𝒢𝓗𝓘𝒥𝒦𝓛𝓜𝒩𝒪𝒫𝒬𝓡𝒮𝒯𝒰𝒱𝒲𝒳𝒴𝒵<br>𝒶𝒷𝒸𝒹𝓮𝒻𝓰𝒽𝒾𝒿𝓀𝓁𝓂𝓃𝓸𝓅𝓆𝓇𝓈𝓉𝓊𝓋𝓌𝓍𝓎𝓏
+                </li>
+                <li fontid="f8" fonttype='1'>
+                    𝕬𝕭𝕮𝕯𝕰𝕱𝕲𝕳𝕴𝕵𝕶𝕷𝕸𝕹𝕺𝕻𝕼𝕽𝕾𝕿𝖀𝖁𝖂𝖃𝖄𝖅<br>𝖆𝖛𝖈𝖉𝖊𝖋𝖌𝖍𝖎𝖏𝖐𝖑𝖒𝖓𝖔𝖕𝖖𝖗𝖘𝖙𝖚𝖛𝖜𝖝𝖞𝖟
+                </li>
+                <li fontid="f9" fonttype='1'>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>ᴀʙᴄᴅᴇғɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡᴢʏᴢ</li>
+                <li fontid="f10" fonttype='1'>
+                    𝐴𝐵𝐶𝐷𝐸𝐹𝐺𝐻𝐼𝐽𝐾𝐿𝑀𝑁𝑂𝑃𝑄𝑅𝑆𝑇𝑈𝑉𝑊𝑋𝑌𝑍<br>𝑎𝑏𝑐𝑑𝑒𝑓𝑔ℎ𝑖𝑗𝑘𝑙𝑚𝑛𝑜𝑝𝑞𝑟𝑠𝑡𝑢𝑣𝑤𝑥𝑦𝑧
+                </li>
+                <li fontid="f11" fonttype='2'>
+                    ①②③④⑤⑥⑦⑧⑨⓪
+                    <br>
+                    ⒶⒷⒸⒹⒺⒻⒼⒽⒾⒿⓀⓁⓂⓃ
+                    <br>
+                    ⓄⓅⓆⓇⓈⓉⓊⓋⓌⓍⓎⓏ
+                    <br>
+                    ⓐⓑⓒⓓⓔⓕⓖⓗⓘⓙⓚⓛⓜⓝ
+                    <br>
+                    ⓞⓟⓠⓡⓢⓣⓤⓥⓦⓧⓨⓩ
+                </li>
+                <li fontid="f12" fonttype='2'>❶❷❸❹❺❻❼❽❾⓿<br>🅐🅑🅒🅓🅔🅕🅖🅗🅘🅙🅚🅛🅜🅝<br>🅞🅟🅠🅡🅢🅣🅤🅥🅦🅧🅨🅩
+                </li>
+                <li fontid="f13" fonttype='1'>🄰🄱🄲🄳🄵🄶🄷🄸🄹🄺🄻🄼🄽<br>🄾🄿🅀🅁🅂🅃🅄🅅🅆🅇🅈🅉</li>
+                <li fontid="f14" fonttype='1'>🅰🅱🅲🅳🅴🅵🅶🅷🅸🅹🅺🅻🅼🅽<br>🅾🅿🆀🆁🆂🆃🆄🆅🆆🆇🆈🆉</li>
+                <li fontid="f15" fonttype='1'>
+                    🇦​🇧​🇨​🇩​🇪​🇫​🇬​🇭​🇮​🇯​🇰​🇱​🇲​🇳​🇴​🇵​🇶​🇷​🇸​🇹​🇺​🇻​🇼​🇽​🇾​🇿</li>
+
+            </ul>
+        </div>
+        <div id="copyright">
+            <a style="color: rgb(131, 127, 127);" target="_blank" href="https://github.com/woytu/no-folding/issues">
+                <svg viewBox="0 0 100 100" aria-hidden="true" role="img">
+                    <path clip-rule="evenodd" d="M50 5.7C24.9 5.7 4.5 26 4.6 51.2c0 19.6 12.5 36.9 31.1 43.1 2.3.4 3.1-1
+                        3.1-2.2s0-3.9-.1-7.7c-12.6 2.7-15.3-6.1-15.3-6.1-2.1-5.3-5-6.7-5-6.7-4.1-2.9.3-2.8.3-2.8 4.6.3 7
+                        4.7 7 4.7 4.1 6.9 10.6 4.9 13.2 3.8.2-2.3 1.2-4.5 2.9-6.1-10.2-1.1-20.8-5-20.8-22.5-.1-4.5 1.6-8.9
+                        4.7-12.2-.5-1.1-2-5.7.4-12 0 0 3.8-1.2 12.5 4.7 7.4-2 15.3-2 22.8 0 8.7-5.9 12.4-4.7 12.4-4.7 2.5
+                        6.3 1 10.9.5 12 3.1 3.3 4.8 7.7 4.7 12.2 0 17.5-10.6 21.4-20.8 22.4 1.6 1.4 3.1 4.2 3.1 8.4 0
+                        6.1-.1 11-.1 12.4 0 1.2.8 2.6 3.1 2.2 23.8-8 36.6-33.8 28.6-57.6C86.8 18.2 69.5 5.7 50 5.7z"
+                        fill="currentColor" fill-rule="evenodd">
+                    </path>
+                </svg>
+                问题反馈
+            </a>
+        </div>
+    </div>
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/clipboard@2.0.6/dist/clipboard.js"></script>
+    <script src="https://unpkg.com/sweetalert2@10.13.0/dist/sweetalert2.all.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
