@@ -1,7 +1,7 @@
 /*
  * @Author: https://www.bajins.com
  * @Date: 2021-01-21 08:51:40
- * @LastEditTime: 2021-01-21 10:40:36
+ * @LastEditTime: 2021-10-21 12:52:53
  * @LastEditors: Please set LastEditors
  * @Description: 主页js
  * @FilePath: index.js
@@ -157,26 +157,17 @@ function getRandomNumber(n) {
     return randomNumber;
 }
 
-function getRandomNumberArray(len) {
-    let arr = [];
-    for (let i = 0, j = Math.ceil(Math.random() * 10); i < j; i++) {
-        arr[i] = random(0, len);
-    }
-    return arr;
-}
-
 // 开始转换
 function startZh(text, clipboardobj) {
-    let strArray = ["\u200D", "\u202A", "\u202B", "\u202C", "\u202D", "\u202E",
+    let strArray = ["\u200B", "\u2028", "\u2029", "\u200D", "\u202A", "\u202B", "\u202C", "\u202D", "\u202E",
         "\u2060", "\u2061", "\u2062", "\u2063", "\u2064", "\u2065", "\u206A",
         "\u206B", "\u206C", "\u206D", "\u206E", "\u206F"];
 
     let textArry = text.split('');
-    for (let i = 0, j = getRandomNumberArray(text.length - 1); i < j.length; i++) {
-        let str = escape(strArray[random(0, strArray.length - 1)]);
-        textArry.splice(j[i], 0, str);
+    for (let i = 1; i < random(1, textArry.length - 1); i++) {
+        textArry.splice(random(i, textArry.length - 1), 0, strArray[random(0, strArray.length - 1)]);
     }
-    $(clipboardobj).attr('data-clipboard-text', unescape(textArry.join('')));
+    $(clipboardobj).attr('data-clipboard-text', textArry.join(''));
 
     var myclipboard = new ClipboardJS(clipboardobj);
 
