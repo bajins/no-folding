@@ -1,7 +1,7 @@
 /*
  * @Author: https://www.bajins.com
  * @Date: 2021-01-21 08:51:40
- * @LastEditTime: 2021-10-21 12:52:53
+ * @LastEditTime: 2021-10-21 13:41:28
  * @LastEditors: Please set LastEditors
  * @Description: 主页js
  * @FilePath: index.js
@@ -131,43 +131,19 @@ function random(m, n) {
     return Math.floor(Math.random() * (m - n) + n);
 }
 
-/**
- * 随机生成N位数字(0到9) 获取随机数
- * 
- * @param n 0-9
- */
-function getRandomNumber(n) {
-    var arr = new Array(n); //用于存放随机数
-    var randomNumber = ''; //存放随机数
-    for (i = 0; i < arr.length; i++)
-        arr[i] = parseInt(Math.random() * 10);
-    var flag = 0;
-    for (i = 0; i < arr.length - 1; i++) {
-        for (j = i + 1; j < arr.length; j++) {
-            if (arr[i] == arr[j]) {
-                flag = 1;
-                break;
-            }
-        }
-        if (flag) break;
-    }
-    for (var i = 0; i < arr.length; i++) {
-        randomNumber += arr[i];
-    }
-    return randomNumber;
-}
-
 // 开始转换
 function startZh(text, clipboardobj) {
-    let strArray = ["\u200B", "\u2028", "\u2029", "\u200D", "\u202A", "\u202B", "\u202C", "\u202D", "\u202E",
+    // "\u202E", "\u202B" 将字符串反序（反转/翻转）
+    const strArray = ["\u200B", "\u2028", "\u2029", "\u200D", "\u202A", "\u202C", "\u202D",
         "\u2060", "\u2061", "\u2062", "\u2063", "\u2064", "\u2065", "\u206A",
         "\u206B", "\u206C", "\u206D", "\u206E", "\u206F"];
 
-    let textArry = text.split('');
-    for (let i = 1; i < random(1, textArry.length - 1); i++) {
-        textArry.splice(random(i, textArry.length - 1), 0, strArray[random(0, strArray.length - 1)]);
+    for (let i = 1; i < random(1, text.length - 1); i++) {
+        const index = random(i, text.length - 1);
+        const space = strArray[random(0, strArray.length - 1)];
+        text = text.slice(0, index) + space + text.slice(index);
     }
-    $(clipboardobj).attr('data-clipboard-text', textArry.join(''));
+    $(clipboardobj).attr('data-clipboard-text', text);
 
     var myclipboard = new ClipboardJS(clipboardobj);
 
